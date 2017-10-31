@@ -1,0 +1,44 @@
+/*
+Theme Name: Squared
+Theme URI: https://thrivethemes.com/
+Author: Thrive Themes
+Author URI: https://thrivethemes.com/
+Description: Squared is a bold and eye-catching flat design theme. It’s a multi-purpose theme, which works for creating amazing sales pages, marketing sites and landing pages just as well as it works for creating a stunning blog.
+Version: 1.200.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, thrive, lead capture
+*/
+
+
+#1{display:none;}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+div#cat_15 {
+    display: none! important;
+}
+img.wp-post-image {
+    width: 100%;
+}
+.side_logo #nav_right {display:none;}
