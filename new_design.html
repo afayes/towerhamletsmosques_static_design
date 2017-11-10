@@ -151,8 +151,8 @@
     <link rel="stylesheet" id="squared-style-css" href="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/style.css" type="text/css" media="all">
     <link rel="stylesheet" id="thrive-reset-css" href="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/reset.css" type="text/css" media="all">
     <link rel="stylesheet" id="thrive-main-style-css" href="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/main_red.css" type="text/css" media="all">
-    <!--<script type="text/javascript" src="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/jquery.js"></script>-->
-    <!--<script type="text/javascript" src="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/jquery-migrate.min.js"></script>-->
+    <script type="text/javascript" src="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/jquery.js"></script>
+    <script type="text/javascript" src="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/jquery-migrate.min.js"></script>
 
     <script type="text/javascript" src="./Tower Hamlets Mosques - Beginning and Jamaat Times_files/compat.min.js"></script>
     <link rel="https://api.w.org/" href="http://localhost:8888/towerhamletsmosques.co.uk/wp-json/">
@@ -486,6 +486,9 @@
                       integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
                       crossorigin="anonymous">
 
+                <link type="text/css" rel="stylesheet" href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/google-like-autocomplete/jquery.autocomplete.css"/>
+                <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/google-like-autocomplete/jquery.autocomplete.js"></script>
+
                 <style>
                     li:before {
                         content: none !important;
@@ -511,10 +514,18 @@
 
                     .favourite:hover {
                         color: rgba(86, 86, 86, 0.45);;
-                        cursor: pointer;
                     }
 
                     .favourite {
+                        color: slategray;
+                        cursor: pointer;
+                    }
+
+                    .delete:hover {
+                        color: rgba(86, 86, 86, 0.45);;
+                    }
+
+                    .delete {
                         color: slategray;
                         cursor: pointer;
                     }
@@ -523,6 +534,10 @@
                 </style>
 
                 <div class="awr lnd ">
+                    <div style="margin-top: 20px; padding-right: 25px; padding-left: 25px;" class="input-group">
+                        <i  class="fa fa-search input-group-addon" aria-hidden="true"></i>
+                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Search">
+                    </div>
                     <div class="container" style="margin-top: 10px;">
                         <div class="row">
                             <div class="col-md">
@@ -539,7 +554,7 @@
                                                 </span>
                                                 </div>
                                                 <div style="padding: 0px; position: relative; right: 10px;" class="col-1">
-                                                    <i style="font-size: 20px;" class="fa fa-times-circle-o favourite delete" aria-hidden="true"></i>
+                                                    <i style="font-size: 20px;" class="fa fa-times-circle-o delete" aria-hidden="true"></i>
                                                 </div>
                                             </div>
                                             <div class="row prayer-time" style="display:none">
@@ -1212,6 +1227,22 @@ var TL_Const = {
             jQuery(this).addClass('fa-heart-o')
         }
     })
+
+    jQuery('.delete').click(function() {
+        jQuery(this).closest(".masjid").remove();
+    })
+
+    var states = [
+        'Alabama', 'Alaska', 'Arizona'
+    ];
+
+    jQuery(function() {
+        jQuery("#tags").autocomplete({
+            source:[states]
+        });
+    });
 </script>
+
+
 </body>
 </html>
