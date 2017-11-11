@@ -510,14 +510,6 @@
                         cursor: pointer;
                     }
 
-                    .masjid-header {
-                        font-weight: bold;
-                        color: slategray;
-                    }
-
-                    .favourite:hover {
-                        color: rgba(86, 86, 86, 0.45);;
-                    }
 
                     .favourite {
                         color: slategray;
@@ -531,6 +523,18 @@
                     .delete {
                         color: slategray;
                         cursor: pointer;
+                    }
+
+                    @media (pointer:fine) {
+                        .favourite:hover {
+                            color: rgba(86, 86, 86, 0.45);;
+                        }
+
+                        .masjid-header {
+                            font-weight: bold;
+                            color: slategray;
+                        }
+                        /* Primary Input is a fine pointer device such as a mouse or stylus */
                     }
 
 
