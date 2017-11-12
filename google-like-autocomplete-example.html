@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Autocomplete - Default functionality</title>
+    <link type="text/css" rel="stylesheet" href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/google-like-autocomplete/jquery.autocomplete.css"/>
+
+
+</head>
+<body>
+
+<div class="ui-widget">
+    <label for="tags">Tags: </label>
+    <input id="tags">
+</div>
+
+<script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/jquery.js"></script>
+<script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/google-like-autocomplete/jquery.autocomplete.js"></script>
+
+<script>
+    var states = [
+        'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+        'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+        'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
+        'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+        'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
+        'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+        'New Jersey', 'New Mexico', 'New York', 'North Carolina',
+        'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
+        'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+        'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+        'West Virginia', 'Wisconsin', 'Wyoming'
+    ];
+
+    jQuery(function() {
+        jQuery("input").autocomplete({
+            source:[states]
+        });
+    });
+</script>
+
+</body>
+</html>
