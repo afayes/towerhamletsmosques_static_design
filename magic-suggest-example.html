@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>magic suggest example</title>
+
+    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/jquery.js"></script>
+
+    <link href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/bootstrap.min.css" rel="stylesheet"/>
+    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/bootstrap.min.js"></script>
+
+
+    <link href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/magic-suggest/magicsuggest.css" rel="stylesheet">
+    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/magic-suggest/magicsuggest.js"></script>
+
+</head>
+<body>
+
+
+<input id="magicsuggest" type="text" class="form-control search" id="inlineFormInputGroupUsername2" placeholder="Search">
+
+
+<script>
+
+    jQuery(function() {
+        jQuery('#magicsuggest').magicSuggest({
+            data:['java', 'jade', 'jason'],
+            hideTrigger:true,
+            maxSuggestions: 3,
+            maxSelection: 0
+    });
+    });
+
+</script>
+
+
+
+</body>
+</html>

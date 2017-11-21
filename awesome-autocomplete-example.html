@@ -6,24 +6,17 @@
     <title>awesomplete example</title>
 
     <link rel="stylesheet" href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/awesomplete/awesomplete.css" />
-    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/awesomplete/awesomplete.js" async></script>
+    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/awesomplete/awesomplete.js"></script>
 </head>
 <body>
 
 <input id="myinput" />
-<datalist id="mylist">
-    <option>coolade</option>
-    <option>adeson</option>
 
-</datalist>
 
 <script>
     var input = document.getElementById("myinput");
     var awesomplete = new Awesomplete(input, {
-        list: ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"],
-        'awesomplete-selectcomplete':function(text) {
-            console.log('selected ' + text)
-        }
+        list: ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"]
     });
 
     Awesomplete.$('#myinput').addEventListener("awesomplete-selectcomplete", function(text) {

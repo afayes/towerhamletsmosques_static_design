@@ -539,15 +539,32 @@
                         /* Primary Input is a fine pointer device such as a mouse or stylus */
                     }
 
+                    .awesomplete {
+                        width: 100% !important;
+                    }
+
 
                 </style>
 
                 <div class="awr lnd ">
-                    <div style="margin-top: 20px; padding-right: 25px; padding-left: 25px;" class="input-group">
-                        <i class="fa fa-search input-group-addon" aria-hidden="true"></i>
-                        <input id="search" type="text" class="form-control search" id="inlineFormInputGroupUsername2" placeholder="Search">
+
+                    <link rel="stylesheet" href="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/awesomplete/awesomplete.css" />
+                    <script src="Tower%20Hamlets%20Mosques%20-%20Beginning%20and%20Jamaat%20Times_files/awesomplete/awesomplete.js"></script>
+
+
+
+                    <div class="container" style="margin-top: 15px; margin-left: 10px; padding-right: 30px;">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="input-group">
+                                    <i class="fa fa-search input-group-addon" aria-hidden="true"></i>
+                                    <input id="search" class="form-control" style="width: 100%; border-top-left-radius: 0; border-bottom-left-radius: 0;" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="container" style="margin-top: 10px;">
+
+                        <div class="container" style="margin-top: 10px;">
                         <div class="row">
                             <div class="col-md">
                                 <div id="favourites" class="border rounded" style="padding: 10px; margin: 10px;">
@@ -600,6 +617,7 @@
 
                                                 </div>
                                             </div>
+
 
 
                                         </li>
@@ -1015,53 +1033,56 @@ var TL_Const = {
 </div>
 
 <script>
-    jQuery(".masjid-header").click(function (event) {
-        jQuery(this).closest('.masjid').find(".prayer-time").slideToggle();
 
-        var actionElem = jQuery(this).children('.action');
-        if (actionElem.hasClass('fa-chevron-circle-right')) {
-            actionElem.removeClass('fa-chevron-circle-right')
-            actionElem.addClass('fa-chevron-circle-down')
-        } else {
-            actionElem.removeClass('fa-chevron-circle-down')
-            actionElem.addClass('fa-chevron-circle-right')
-        }
+    jQuery(function() {
+        jQuery(".masjid-header").click(function (event) {
+            jQuery(this).closest('.masjid').find(".prayer-time").slideToggle();
 
-    })
-
-    jQuery('.favourite').click(function () {
-        if (jQuery(this).hasClass('fa-heart-o')) {
-            jQuery(this).removeClass('fa-heart-o')
-            jQuery(this).addClass('fa-heart')
-        } else {
-            jQuery(this).removeClass('fa-heart')
-            jQuery(this).addClass('fa-heart-o')
-        }
-    })
-
-    jQuery('.delete').click(function () {
-        jQuery(this).closest(".masjid").remove();
-    })
-
-    var searchTermsToMasjidIdMap = {};
-    var searchTerms = [];
-
-    jQuery('.masjid-name').each(function() {
-        var masjidId = jQuery(this).closest('.masjid').attr('id');
-        var masjidName = jQuery.trim(jQuery(this).text())
-        searchTermsToMasjidIdMap[masjidName] = masjidId;
-        searchTerms.push(masjidName);
-    })
-
-
-    jQuery(function () {
-        jQuery("#search").autocomplete({
-            source: [searchTerms],
-            select: function (searchTerm) {
-
+            var actionElem = jQuery(this).children('.action');
+            if (actionElem.hasClass('fa-chevron-circle-right')) {
+                actionElem.removeClass('fa-chevron-circle-right')
+                actionElem.addClass('fa-chevron-circle-down')
+            } else {
+                actionElem.removeClass('fa-chevron-circle-down')
+                actionElem.addClass('fa-chevron-circle-right')
             }
+        })
+
+        jQuery('.favourite').click(function () {
+            if (jQuery(this).hasClass('fa-heart-o')) {
+                jQuery(this).removeClass('fa-heart-o')
+                jQuery(this).addClass('fa-heart')
+            } else {
+                jQuery(this).removeClass('fa-heart')
+                jQuery(this).addClass('fa-heart-o')
+            }
+        })
+
+        jQuery('.delete').click(function () {
+            jQuery(this).closest(".masjid").remove();
+        })
+
+        var searchTermsToMasjidIdMap = {};
+        var searchTerms = [];
+
+        jQuery('.masjid-name').each(function() {
+            var masjidId = jQuery(this).closest('.masjid').attr('id');
+            var masjidName = jQuery.trim(jQuery(this).text())
+            searchTermsToMasjidIdMap[masjidName] = masjidId;
+            searchTerms.push(masjidName);
+        })
+
+        var input = document.getElementById("search");
+
+        var awesomplete = new Awesomplete(input, {
+            list: searchTerms
+        });
+
+        Awesomplete.$('#search').addEventListener("awesomplete-selectcomplete", function(text) {
+            console.log(text.text + 'selected');
         });
     });
+
 </script>
 
 
